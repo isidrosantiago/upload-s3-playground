@@ -1,0 +1,26 @@
+spring:
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/files_s3
+    username: upload
+    password: start
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+
+# AWS S3 Configuration
+aws:
+  bucket: # ADD VALUE
+  region: # ADD VALUE
+
+cloud:
+  aws:
+    credentials:
+      access-key: # ADD VALUE
+      secret-key: # ADD VALUE
