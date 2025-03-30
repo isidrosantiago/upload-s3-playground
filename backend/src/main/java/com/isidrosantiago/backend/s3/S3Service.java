@@ -26,10 +26,13 @@ public class S3Service {
     @Value("${aws.region}")
     private String region;
 
+    @Value("${aws.folder}")
+    private String folder;
+
     public String storeObject(String filename, byte[] file) {
         PutObjectRequest objectRequest = PutObjectRequest.builder()
             .bucket(bucket)
-            .key("java-test/" + filename)
+            .key(folder + filename)
             .acl(PUBLIC_READ)
             .build();
 
@@ -53,6 +56,6 @@ public class S3Service {
     }
 
     private String getPublicUrl(String filename) {
-        return "https://" + bucket + ".s3." + region + ".amazonaws.com/" + filename;
+        return "https://" + bucket + ".s3." + region + ".amazonaws.com/" + folder + filename;
     }
 }

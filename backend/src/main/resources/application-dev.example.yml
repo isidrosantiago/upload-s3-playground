@@ -18,6 +18,7 @@ spring:
 aws:
   bucket: # ADD VALUE
   region: # ADD VALUE
+  folder: # ADD VALUE
 
 cloud:
   aws:
